@@ -16,31 +16,34 @@ def encode(string):
 
 
 def print_options():
-    print("\n0. Exit")
+    print("\nMenu")
+    print("-------------")
     print("1. Encode")
-    print("2. Decode\n")
+    print("2. Decode")
+    print("3. Quit\n")
 
 
 def main():
     print_options()
 
-    user_input = int(input("Select from the following options: "))
+    user_input = int(input("Please enter an option: "))
     num = 0
+    encode_num = 0
 
-    while user_input != 0:
+    while user_input != 3:
         if user_input == 1:
-            num = input("Enter a number to be encoded: ")
+            num = input("Please enter your password to encode: ")
             encode_num = encode(num)
-            print(encode_num)
+            print("Your password has been encoded and stored!")
 
         if user_input == 2:
-            num = input("Enter a number to be decoded: ")
-            # decode_num = decode(num)
-            # print(decode_num)
+
+            print(f"The encoded password is {encode_num},", end=" ")
+            print(f"and the original password is {num}.")
 
         print_options()
 
-        user_input = int(input("Select from the following options: "))
+        user_input = int(input("Please enter an option: "))
 
 
 if __name__ == "__main__":
